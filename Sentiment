@@ -1,0 +1,15 @@
+from textblob import TextBlob
+
+with open('mytext.txt', 'r') as f:
+    text = f.read()
+
+blob = TextBlob(text)
+sentiment = blob.sentiment.polarity
+print("Sentiment: ", sentiment)
+
+if sentiment == 0:
+    print("Neutral Result")
+elif sentiment > 0:
+    print("Positive Result")
+else:
+    print("Negative Result")
